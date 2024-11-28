@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Handoff";
+  src: url("./../fonts/handoff-font.ttf");
+}
+
+body {
+  background-color: #000;
+  font-family: "Handoff", sans-serif;
+}
