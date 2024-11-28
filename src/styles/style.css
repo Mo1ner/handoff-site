@@ -5,5 +5,35 @@
 
 body {
   background-color: #000;
+  color: #fff;
   font-family: "Handoff", sans-serif;
+
+  transition: all 0.2s ease-in;
+}
+
+a {
+  color: #fff;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: 1265px;
+}
+
+.main-container {
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: 1205px;
+}
+
+.white-theme {
+  background-color: #fff;
+  color: #000;
+  transition: all 0.2s ease-in;
+}
+
+.white-theme a {
+  color: #000;
+  transition: all 0.2s ease-in;
 }
