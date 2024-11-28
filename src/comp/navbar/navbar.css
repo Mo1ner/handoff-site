@@ -45,4 +45,10 @@
 .nav img {
   cursor: pointer;
   max-width: 57px;
+
+  transition: all 0.2s ease-in;
+}
+
+.nav img:hover {
+  transform: scale(1.02);
 }
