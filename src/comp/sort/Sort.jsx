@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import handWhite from "./../../img/hand-white.png";
-import hand from "./../../img/hand.png";
-import arrowWhite from "./../../img/arrow-white.png";
-import arrow from "./../../img/arrow.png";
+import handWhite from "./../../img/icons/hand-white.png";
+import hand from "./../../img/icons/hand.png";
+import arrowWhite from "./../../img/icons/arrow-white.png";
+import arrow from "./../../img/icons/arrow.png";
 
 import "./sort.css";
 

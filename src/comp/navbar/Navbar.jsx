@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
-import sun from "./../../img/sun-white.png";
-import moon from "./../../img/moon.png";
+import sun from "./../../img/icons/sun-white.png";
+import moon from "./../../img/icons/moon.png";
 
 import "./navbar.css";
 
