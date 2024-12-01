@@ -1,0 +1,109 @@
+.sort {
+  padding: 45px 0;
+}
+
+.sort-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.collection-section {
+  position: relative;
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  font-size: 30px;
+}
+
+.collection-section img {
+  cursor: pointer;
+  width: 37px;
+  transition: all 0.2s ease-in;
+}
+
+.collection-section img:hover {
+  transform: scale(1.02);
+}
+
+.sort-section {
+  position: relative;
+  display: flex;
+  column-gap: 5px;
+  align-items: center;
+  font-size: 30px;
+}
+
+.sort-section img {
+  cursor: pointer;
+  width: 37px;
+  transition: all 0.2s ease-in;
+}
+
+.sort-section img:hover {
+  transform: scale(1.01);
+}
+
+/* collection section */
+
+.collection-dropdown {
+  position: absolute;
+  top: 100%;
+  width: 200px;
+  font-size: 20px;
+  top: 50px;
+  left: 0;
+  background-color: gray;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  opacity: 0.85;
+}
+
+.collection-option {
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.collection-option:hover {
+  background-color: darkgray;
+}
+
+/* sorting price section*/
+
+.sort-dropdown {
+  position: absolute;
+  top: 100%;
+  width: 250px;
+  font-size: 20px;
+  right: 0;
+  background-color: gray;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  opacity: 0.85;
+}
+
+.sort-option {
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sort-option:hover {
+  background-color: darkgray;
+}
+
+.arrow-rotated {
+  transform: rotate(180deg);
+  transition: all 0.3s ease-in;
+}
+
+.arrow-sort {
+  transition: all 0.3s ease-in;
+}
