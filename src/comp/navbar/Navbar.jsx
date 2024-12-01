@@ -5,12 +5,7 @@ import moon from "./../../img/moon.png";
 
 import "./navbar.css";
 
-const Navbar = () => {
-  const [theme, setTheme] = useState(() => {
-    const savedTheme = localStorage.getItem("theme");
-    return savedTheme === "light";
-  });
-
+const Navbar = ({ theme, setTheme }) => {
   useEffect(() => {
     if (theme) {
       document.body.classList.add("white-theme");
