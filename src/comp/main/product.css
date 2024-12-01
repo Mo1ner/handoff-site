@@ -1,5 +1,11 @@
 /* product */
 
+.products-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
 .product-card {
   padding: 20px;
   border-radius: 10px;

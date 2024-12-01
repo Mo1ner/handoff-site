@@ -3,7 +3,7 @@ import "./product.css";
 
 const Product = ({ product }) => {
   return (
-    <>
+    <div className="products-inner">
       {product.map((item) => (
         <div key={item.id} className="product-card">
           <a className="product-img" href="#">
@@ -15,7 +15,7 @@ const Product = ({ product }) => {
           <button className="add-to-cart">add to cart</button>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
