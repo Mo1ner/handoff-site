@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import handWhite from "./../../img/icons/hand-white.png";
 import hand from "./../../img/icons/hand.png";
@@ -11,6 +12,12 @@ const Sort = ({ theme }) => {
   const [sortMenuOpen, setSortMenuOpen] = useState(false);
   const [collectionMenuOpen, setCollectionMenuOpen] = useState(false);
 
+  const [currentType, setCurrentType] = useState(() => {
+    return localStorage.getItem("currentType") || "t-shirts";
+  });
+
+  const navigate = useNavigate();
+
   const handleCollectionMenu = () => {
     setCollectionMenuOpen(!collectionMenuOpen);
     console.log(collectionMenuOpen);
@@ -20,6 +27,18 @@ const Sort = ({ theme }) => {
     setSortMenuOpen(!sortMenuOpen);
     console.log(sortMenuOpen);
   };
+
+  const handleCollectionChange = (type, route) => {
+    setCurrentType(type);
+    localStorage.setItem("currentType", type);
+    navigate(route);
+    setCollectionMenuOpen(false);
+  };
+
+  useEffect(() => {
+    const savedRoute = `/${currentType}`;
+    navigate(savedRoute);
+  }, [currentType, navigate]);
 
   return (
     <div className="sort">
@@ -31,40 +50,36 @@ const Sort = ({ theme }) => {
               <img src={theme ? hand : handWhite} alt="hanoff" />
             </div>
             <p>init collection</p>
-            <p>(t-shirts)</p>
+            <p>({currentType})</p>
 
             {/* Dropdown collection */}
             {collectionMenuOpen && (
               <div className="collection-dropdown">
                 <div
                   className="collection-option"
-                  onClick={() => {
-                    setCollectionMenuOpen(false);
-                  }}
+                  onClick={() =>
+                    handleCollectionChange("t-shirts", "/t-shirts")
+                  }
                 >
                   t-shirts
                 </div>
                 <div
                   className="collection-option"
-                  onClick={() => {
-                    setCollectionMenuOpen(false);
-                  }}
+                  onClick={() =>
+                    handleCollectionChange("sweaters", "/sweaters")
+                  }
                 >
                   sweaters
                 </div>
                 <div
                   className="collection-option"
-                  onClick={() => {
-                    setCollectionMenuOpen(false);
-                  }}
+                  onClick={() => handleCollectionChange("jeans", "/jeans")}
                 >
                   jeans
                 </div>
                 <div
                   className="collection-option"
-                  onClick={() => {
-                    setCollectionMenuOpen(false);
-                  }}
+                  onClick={() => handleCollectionChange("bags", "/bags")}
                 >
                   bags
                 </div>
