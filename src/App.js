@@ -7,6 +7,7 @@ import {
 
 import Navbar from "./comp/navbar/Navbar";
 import Sort from "./comp/sort/Sort";
+import Footer from "./comp/footer/Footer";
 
 import Bags from "./comp/main/bags/Bags";
 import TShirts from "./comp/main/t-shirts/T-shirts";
@@ -38,6 +39,7 @@ function App() {
           />
           <Route path="/bags" element={<Bags sortOrder={sortOrder} />} />
         </Routes>
+        <Footer theme={theme} />
       </div>
     </Router>
   );

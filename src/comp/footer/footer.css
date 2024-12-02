@@ -1,0 +1,9 @@
+.footer {
+  padding: 15px 0;
+  background: url("./../../img/handoff-text.png");
+}
+
+.footer-img {
+  margin: 0 auto;
+  max-width: 60px;
+}
