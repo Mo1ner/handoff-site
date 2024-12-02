@@ -8,7 +8,7 @@ import arrow from "./../../img/icons/arrow.png";
 
 import "./sort.css";
 
-const Sort = ({ theme }) => {
+const Sort = ({ theme, onSortChange }) => {
   const [sortMenuOpen, setSortMenuOpen] = useState(false);
   const [collectionMenuOpen, setCollectionMenuOpen] = useState(false);
 
@@ -35,6 +35,11 @@ const Sort = ({ theme }) => {
     setCollectionMenuOpen(false);
   };
 
+  const handleSortChange = (order) => {
+    onSortChange(order);
+    setSortMenuOpen(false);
+  };
+
   useEffect(() => {
     const savedRoute = `/${currentType}`;
     navigate(savedRoute);
@@ -52,7 +57,7 @@ const Sort = ({ theme }) => {
             <p>init collection</p>
             <p>({currentType})</p>
 
-            {/* Dropdown collection */}
+            {/* dropdown collection */}
             {collectionMenuOpen && (
               <div className="collection-dropdown">
                 <div
@@ -98,22 +103,24 @@ const Sort = ({ theme }) => {
               <img src={theme ? arrow : arrowWhite} alt="arrow" />
             </div>
 
-            {/* Dropdown sort menu */}
+            {/* dropdown sort menu */}
             {sortMenuOpen && (
               <div className="sort-dropdown">
                 <div
                   className="sort-option"
-                  onClick={() => {
-                    setSortMenuOpen(false);
-                  }}
+                  onClick={() => handleSortChange(null)}
+                >
+                  default order
+                </div>
+                <div
+                  className="sort-option"
+                  onClick={() => handleSortChange("high-to-low")}
                 >
                   price: high to low
                 </div>
                 <div
                   className="sort-option"
-                  onClick={() => {
-                    setSortMenuOpen(false);
-                  }}
+                  onClick={() => handleSortChange("low-to-high")}
                 >
                   price: low to high
                 </div>

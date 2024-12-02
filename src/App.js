@@ -21,17 +21,22 @@ function App() {
     return savedTheme === "light";
   });
 
+  const [sortOrder, setSortOrder] = useState(null);
+
   return (
     <Router>
       <div className="App">
         <Navbar theme={theme} setTheme={setTheme} />
-        <Sort theme={theme} />
+        <Sort theme={theme} onSortChange={setSortOrder} />
         <Routes>
           <Route path="/" element={<Navigate to="/t-shirts" />} />
-          <Route path="/t-shirts" element={<TShirts />} />
-          <Route path="/jeans" element={<Jeans />} />
-          <Route path="/sweaters" element={<Sweaters />} />
-          <Route path="/bags" element={<Bags />} />
+          <Route path="/t-shirts" element={<TShirts sortOrder={sortOrder} />} />
+          <Route path="/jeans" element={<Jeans sortOrder={sortOrder} />} />
+          <Route
+            path="/sweaters"
+            element={<Sweaters sortOrder={sortOrder} />}
+          />
+          <Route path="/bags" element={<Bags sortOrder={sortOrder} />} />
         </Routes>
       </div>
     </Router>
